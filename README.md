@@ -1,2 +1,2 @@
 # dotfiles
-noktadoyalar
+noktadosyalar
