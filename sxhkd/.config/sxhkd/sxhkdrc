@@ -8,6 +8,7 @@
 super + Escape
 	pkill -USR1 -x sxhkd
 
+
 # PROGRAM KEYS-----------------------------------------------------{{{1
 
 # terminal 
@@ -17,6 +18,7 @@ alt + Return
 # program launcher
 alt + @space
 	rofi -modi drun -show drun
+
 
 # WINDOW MANAGER---------------------------------------------------{{{1
 
@@ -29,6 +31,10 @@ super + alt + {q,r}
     # close and kill
 alt + shift + c
 	bspc node -c
+
+    # Make it float
+alt + shift + f
+        bspc node -t ~floating
 
 
     # ORGANIZE-----------------------------------------------------{{{2
@@ -87,5 +93,7 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+
 #}}}
+
 
