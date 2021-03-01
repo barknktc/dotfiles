@@ -15,20 +15,6 @@ kmix
 nm-applet
 
 
-# MONITORS---------------------------------------------------------{{{1
-
-#If a second monitor is connected make it the main one 
-
-external_monitor=$(xrandr --query | grep 'DP-1')
-if [[ $external_monitor = *disconnected* ]]; then
-bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9
-bspc monitor DP-1 -d    
-else
-bspc monitor eDP-1 -d 
-bspc monitor DP-1 -d 1 2 3 4 5 6 7 8 9
-fi
-
-
 # VISUAL-----------------------------------------------------------{{{1
 
 bspc config split_ratio          0.60   # Window split ratio
@@ -36,7 +22,7 @@ bspc config split_ratio          0.60   # Window split ratio
 
     # BORDERS & GAPS-----------------------------------------------{{{2
 
-    bspc config window_gap          20  # Gaps
+    bspc config window_gap          25  # Gaps
     bspc config border_width        0   # Borders 
 
     bspc config normal_border_color 	\#33322e    # UF window color
@@ -64,5 +50,19 @@ bspc config split_ratio          0.60   # Window split ratio
 
      
     # }}}
+
+
+# MONITORS---------------------------------------------------------{{{1
+
+#If a second monitor is connected make it the main one 
+
+external_monitor=$(xrandr --query | grep 'DP-1')
+if [[ $external_monitor = *disconnected* ]]; then
+bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9
+bspc monitor DP-1 -d    
+else
+bspc monitor eDP-1 -d 
+bspc monitor DP-1 -d 1 2 3 4 5 6 7 8 9
+fi
 
 
